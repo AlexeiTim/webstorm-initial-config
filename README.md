@@ -8,18 +8,28 @@
 # Добавление eslint в проект
 ## Установка зависимостей
 ### JS
-- npm install --save-dev eslint eslint-plugin-vue
-
+- `npm install --save-dev eslint eslint-plugin-vue`
 ### TS
-- npm install --save-dev eslint eslint-plugin-vue @vue/eslint-config-typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin
+- `npm install --save-dev eslint eslint-plugin-vue @vue/eslint-config-typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin`
 
 Создаем файл в корневой директории проекта с название:
-- .eslintrc.js
+- `.eslintrc.js`
 
 Добавляем в него следующий код:
+### JS
 
+```rb
+module.exports = {
+  extends: [
+    'plugin:vue/recommended',
+    'eslint:recommended',
+  ],
+  rules: {
+    semi: ['error', 'never']
+  }
+}
+```
 ### TS
-
 ```rb
 // eslint-disable-next-line no-undef
 module.exports = {
@@ -31,21 +41,6 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser'
   },
-  rules: {
-    semi: ['error', 'never']
-  }
-}
-```
-
-### JS
-
-```rb
-
-module.exports = {
-  extends: [
-    'plugin:vue/recommended',
-    'eslint:recommended',
-  ],
   rules: {
     semi: ['error', 'never']
   }
